@@ -5,8 +5,8 @@ import java.util.Scanner;
 public class Bai5 {
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
-        int choice = -1;
-        while (choice != 0) {
+        int choice;
+        while (true) {
             System.out.println("Menu");
             System.out.println("1. Draw the rectangle");
             System.out.println("2. Draw the square triangle ");
