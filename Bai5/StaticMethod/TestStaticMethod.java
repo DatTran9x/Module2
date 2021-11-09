@@ -8,6 +8,7 @@ public class TestStaticMethod {
         Student s2 = new Student(222, "Khanh");
         Student s3 = new Student(333, "Nam");
         //calling display method
+
         s1.display();
         s2.display();
         s3.display();
