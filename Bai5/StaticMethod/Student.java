@@ -1,8 +1,8 @@
 package Bai5.StaticMethod;
 
 public class Student {
-    private int rollno;
-    private String name;
+    private final int rollno;
+    private final String name;
     private static String college = "BBDIT";
 
     //constructor to initialize the variable
@@ -15,7 +15,6 @@ public class Student {
     static void change() {
         college = "CODEGYM";
     }
-
     //method to display values
     void display() {
         System.out.println(rollno + " " + name + " " + college);
