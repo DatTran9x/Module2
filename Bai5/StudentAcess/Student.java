@@ -1,4 +1,4 @@
-package StudentAcess;
+package Bai5.StudentAcess;
 
 public class Student {
     String name;
