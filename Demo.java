@@ -1,75 +1,77 @@
+import Bai5.NV;
+
+import java.util.Objects;
 import java.util.Scanner;
 
 public class Demo {
-//    public static void main(String[] args) {
-//        Scanner input = new Scanner(System.in);
-//        System.out.println("Nhap number :");
-//        int number = input.nextInt();
-//            boolean check = true;
-//            for (int i = 2; i <= Math.sqrt(number); i++) {
-//                if (number % i == 0) {
-//                    check = false;
-//                    break;
-//                }
-//            }
-//            if (check) {
-//                System.out.println("SNT");
-//            } else  {
-//                System.out.println("Ko phai SNT");
-//            }
-//    }
-
-//    public static void main(String[] args) {
-//        Scanner input = new Scanner(System.in);
-//        int number = (int) (Math.random()*9+1);
-//        int num = -1;
-//        while (num!=number){
-//            System.out.println("Vui long nhap so");
-//            num = input.nextInt();
-//            if(num<number){
-//                System.out.println("Lon hon");
-//            } else if (num>number){
-//                System.out.println("Nho hon");
-//            } else {
-//                System.out.println("Ban da doan dung");
-//                System.exit(-2);
-//            }
-//        }
-//    }
-
-//    public static void main(String[] args) {
-//        Scanner input = new Scanner(System.in);
-//        System.out.println("Ax^2+Bx+C=0");
-//        System.out.println("A :");
-//        int A = input.nextInt();
-//        System.out.println("B :");
-//        int B = input.nextInt();
-//        System.out.println("C :");
-//        int C = input.nextInt();
-//        double D = B*B-4*A*C;
-//        if(D<0){
-//            System.out.println("Vo nghiem");
-//        } else if(D==0) {
-//            System.out.println("Nghiem la :"+((-1*B)/(2*A)));
-//        } else {
-//            System.out.println("Nghiem 1 la : " + ((-B+Math.sqrt(D))/(2*A)));
-//            System.out.println("Nghiem 2 la : "+ ((-B-Math.sqrt(D))/(2*A)));
-//        }
-//    }
-
     public static void main(String[] args) {
-        Scanner input = new Scanner(System.in);
-        System.out.println("Chào bạn đến với GAME AI LÀ TRIỆU PHÚ");
-        System.out.println("LỚP C0921K1 CÓ BAO NHIÊU BẠN NỮ");
-        System.out.println("1.1 BẠN");
-        System.out.println("2.2 BẠN");
-        System.out.println("3.3 BẠN");
-        System.out.println("4.4 BẠN");
-        int choice = input.nextInt();
-        if (choice == 3) {
-            System.out.println("Đúng");
-        } else {
-            System.out.println("Sai");
+        int n = 2;
+        Object[] arr = new Object[n];
+        NV NV1 = new NV("Toan", 18, "Nam");
+        NV NV2 = new NV("Tien", 18, "Nam");
+        arr[1] = NV2;
+        arr[0] = NV1;
+        while (true) {
+            System.out.println("Menu");
+            System.out.println("1.Hiển thị nhân viên");
+            System.out.println("2.Thêm nhân viên");
+            System.out.println("3.Xóa nhân viên");
+            System.out.println("0.Thoát");
+            Scanner sc = new Scanner(System.in);
+            int choice = sc.nextInt();
+            switch (choice) {
+                case 1:
+                    for (Object o : arr) {
+                        NV a;
+                        a = (NV) o;
+                        if (a == null) {
+                            System.out.println("Chưa có NV");
+                            break;
+                        }
+                        a.show();
+                    }
+                    break;
+                case 2:
+                    n++;
+                    System.out.println("Nhập tên NV");
+                    String name = sc.next();
+                    System.out.println("Nhập tuổi NV");
+                    int age = sc.nextInt();
+                    System.out.println("Nhập giới tính");
+                    String gedner = sc.next();
+                    NV Nv = new NV(name, age, gedner);
+                    Object[] arr1 = new Object[n];
+                    arr1[n - 1] = Nv;
+                    System.arraycopy(arr, 0, arr1, 0, arr.length);
+                    arr = arr1;
+                    break;
+                case 3:
+                    n--;
+                    System.out.println("Nhập tên NV bạn muốn xóa");
+                    String deleteName = sc.next();
+                    Object[] arr2 = new Object[n];
+                    int c = 0;
+                    for (Object o : arr) {
+                        NV a;
+                        a = (NV) o;
+                        if (a == null) {
+                            break;
+                        }
+                        String name1 = a.getName();
+                        if (!Objects.equals(name1, deleteName)) {
+                            arr2[c] = o;
+                            c++;
+                        }
+                    }
+                    c = 0;
+                    arr = arr2;
+                    break;
+                case 0:
+                    System.exit(0);
+                default:
+                    System.out.println("Vui long nhap lai");
+            }
         }
     }
+
 }
