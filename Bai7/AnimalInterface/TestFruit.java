@@ -7,6 +7,6 @@ public class TestFruit {
         fruits[1] = new Apple();
         for (Fruit fruit : fruits) {
             System.out.println(fruit.howToEat());
+        }
     }
 }
-    }
