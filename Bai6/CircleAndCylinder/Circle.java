@@ -44,4 +44,9 @@ public class Circle {
     public String toString1() {
         return "Radius is :" + this.getRadius() + ".Color is :" + this.getColor() + ".Area is :" + this.getArea() + ".Perimeter is :" + this.getPerimeter() + ".";
     }
-}
+@Override public String toString() {
+    return "Circle{" +
+            "radius=" + radius +
+            ", color='" + color + '\'' +
+            '}';
+}}

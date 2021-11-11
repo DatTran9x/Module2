@@ -23,7 +23,12 @@ public class Cylinder extends Circle{
         return this.getArea() * this.getHeight();
     }
 
-    public String toString1() {
-        return "Radius is :" + this.getRadius() + ".Color is :" + this.getColor() + ".Area is :" + this.getArea() + ".Perimeter is :" + this.getPerimeter() + ".Volume is :" + this.getVolume() + ".";
+    @Override
+    public String toString() {
+        return "Cylinder{" +
+                "radius=" + getRadius() +
+                ", color='" + getColor() + '\'' +
+                ", height=" + height +
+                '}';
     }
 }
