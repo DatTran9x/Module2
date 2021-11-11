@@ -9,7 +9,11 @@ public class Book {
     private int number;
     public static int idNumber=0;
 
-    public Book( String name, int createTime, String author, String language, int number) {
+    public int getId() {
+        return id;
+    }
+
+    public Book(String name, int createTime, String author, String language, int number) {
         this.name = name;
         this.createTime = createTime;
         this.author = author;
