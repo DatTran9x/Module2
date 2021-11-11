@@ -13,7 +13,7 @@ public class ComparableCircleTest {
         for (ComparableCircle circle : circles) {
             System.out.println(circle);
         }
-
+        System.out.println(circles[0].compareTo(circles[2]));
         Arrays.sort(circles);
 
         System.out.println("After-sorted:");
