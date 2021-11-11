@@ -3,11 +3,18 @@
 // (powered by FernFlower decompiler)
 //
 
-package Bai6.CircleAndCylinder;
+package Bai7.Comparable;
 
 public class Circle {
     private double radius;
     private String color;
+    private boolean filled;
+
+    public Circle(double radius, String color, boolean filled) {
+        this.radius = radius;
+        this.color = color;
+        this.filled = filled;
+    }
 
     public Circle() {
     }
@@ -48,9 +55,14 @@ public class Circle {
     public String toString1() {
         return "Radius is :" + this.getRadius() + ".Color is :" + this.getColor() + ".Area is :" + this.getArea() + ".Perimeter is :" + this.getPerimeter() + ".";
     }
-@Override public String toString() {
-    return "Circle{" +
-            "radius=" + radius +
-            ", color='" + color + '\'' +
-            '}';
-}}
+
+
+    @Override
+    public String toString() {
+        return "Circle{" +
+                "radius=" + radius +
+                ", color='" + color + '\'' +
+                ", filled=" + filled +
+                '}';
+    }
+}
