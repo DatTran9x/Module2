@@ -1,5 +1,6 @@
 package BTVN.Book;
 
+import java.util.Objects;
 import java.util.Scanner;
 
 public class Method {
@@ -54,16 +55,25 @@ public class Method {
     }
 
     public static void search(Book[] books) {
-        System.out.println("Insert the id of book");
-        int id = sc.nextInt();
-        id--;
-        System.out.println(books[id].toString());
+        System.out.println("Insert the name of book");
+        String name = sc.nextLine();
+        boolean check = true;
+        for (Book a : books) {
+            String bookname = a.getName();
+            if (bookname.equals(name)) {
+                check = false;
+                System.out.println(a.toString());
+            }
+        }
+        if (check) {
+            System.out.println("404.Not found");
+        }
     }
 
     public static void sort(Book[] books) {
         for (int i = 0; i < books.length; i++) {
             for (int j = i; j < books.length; j++) {
-                if (books[i].getId() > books[j].getId()) {
+                if (books[i].getNumber() > books[j].getNumber()) {
                     Book temp = books[i];
                     books[i] = books[j];
                     books[j] = temp;

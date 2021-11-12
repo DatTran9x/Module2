@@ -7,7 +7,7 @@ public class Main {
         Scanner sc = new Scanner(System.in);
         Book[] books = new Book[2];
         books[0] = new Book(
-                "Nhung nguoi khon kho", 1862, "Victor Hugo", "France", 5
+                "Nhung nguoi khon kho", 1862, "Victor Hugo", "France", 10
         );
         books[1] = new Book("Nha tho duc ba Paris", 1828, "Victor Hugo", "France", 6);
         while (true) {

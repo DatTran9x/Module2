@@ -3,6 +3,8 @@ package Bai7.Comparator;
 import java.util.Arrays;
 import java.util.Comparator;
 
+import static java.util.Arrays.*;
+
 public class CircleComparatorTest {
     public static void main(String[] args) {
         Circle[] circles = new Circle[3];
@@ -17,7 +19,7 @@ public class CircleComparatorTest {
 
         Comparator circleComparator = new CircleComparator();
         System.out.println(circleComparator.compare(circles[0],circles[1]));
-        Arrays.sort(circles, circleComparator);
+        sort(circles, circleComparator);
 
         System.out.println("After-sorted:");
         for (Circle circle : circles) {
