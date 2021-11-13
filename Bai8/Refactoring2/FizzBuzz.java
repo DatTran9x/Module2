@@ -2,13 +2,12 @@ package Bai8.Refactoring2;
 
 public class FizzBuzz {
     public static String fizzBuzz(int number){
-        boolean isFuzz = number%3==0;
-        boolean isBuzz = number%5==0;
-
-        if(isFuzz && isBuzz)
+        final boolean isFizz = number % 3 == 0;
+        final boolean isBuzz = number % 5 == 0;
+        if(isFizz && isBuzz)
             return "FizzBuzz";
 
-        if(isFuzz)
+        if(isFizz)
             return "Fizz";
 
         if(isBuzz)
