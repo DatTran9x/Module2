@@ -1,5 +1,6 @@
-package Bai9.FindMax.AbsoluteNumberCalculator;
+package Bai9.FindMax.Test.Bai9.FindMax.AbsoluteNumberCalculator;
 
+import Bai9.FindMax.AbsoluteNumberCalculator.AbsoluteNumberCalculator;
 import org.junit.jupiter.api.Test;
 import static org.junit.jupiter.api.Assertions.*;
 
