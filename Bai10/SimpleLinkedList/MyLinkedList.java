@@ -32,6 +32,7 @@ public class MyLinkedList {
         temp.next = new Node(data);
         temp.next.next = holder;
         numNodes++;
+        numNodes++;
     }
 
     public void addFirst(Object data) {
