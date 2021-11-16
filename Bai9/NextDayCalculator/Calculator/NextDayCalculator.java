@@ -5,7 +5,9 @@ public class NextDayCalculator {
         int thang = input[1];
         int nam = input[2];
         int[] result = input;
-
+        if(thang>12){
+            throw new UnsupportedOperationException();
+        }
         switch (thang) {
             case 1:
             case 3:
