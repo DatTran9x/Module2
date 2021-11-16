@@ -7,6 +7,7 @@ public class Controller {
 
     public static void Menu(NhanVien[] nhanViens) {
         while (true) {
+            System.out.println();
             System.out.println("Menu");
             System.out.println("1.Them nhan vien");
             System.out.println("2.Xoa nhan vien");
@@ -54,6 +55,18 @@ public class Controller {
         return new NhanVien(name, phoneNumber, adress);
     }
 
+    public static int checkID(NhanVien[] nhanViens) {
+        System.out.println("Nhap ID nhan vien ban muon xoa");
+        int ID = sc.nextInt();
+        for (int i = 0; i < nhanViens.length; i++) {
+            if (ID == nhanViens[i].getId()) {
+                return i;
+            }
+        }
+        System.out.println("Khong tim thay ID");
+        return -1;
+    }
+
     public static NhanVien[] delete(NhanVien[] nhanViens) {
         int index = checkID(nhanViens);
         if (index == -1) {
@@ -83,23 +96,5 @@ public class Controller {
             newNV.setId(nhanViens[index].getId());
             nhanViens[index] = newNV;
         }
-    }
-
-    public static int checkID(NhanVien[] nhanViens) {
-        System.out.println("Nhap ID nhan vien ban muon xoa");
-        int ID = sc.nextInt();
-        boolean check = true;
-        int index = 0;
-        for (int i = 0; i < nhanViens.length; i++) {
-            if (ID == nhanViens[i].getId()) {
-                check = false;
-                index = i;
-            }
-        }
-        if (check) {
-            System.out.println("Khong tim thay ID");
-            return -1;
-        } else
-            return index;
     }
 }
