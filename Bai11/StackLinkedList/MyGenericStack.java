@@ -21,6 +21,7 @@ public class MyGenericStack<T> {
         return stack.removeFirst();
     }
 
+
     public boolean isEmpty() {
         if (stack.size() == 0) {
             return true;
