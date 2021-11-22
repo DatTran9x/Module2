@@ -1,7 +1,7 @@
 package BTVN.HocVien;
 
 public class HocVien extends Nguoi{
-    private int score;
+    private float score;
     private int id;
     public static int idNumber;
 
@@ -19,7 +19,7 @@ public class HocVien extends Nguoi{
         this.id = id;
     }
 
-    public int getScore() {
+    public float getScore() {
         return score;
     }
 
