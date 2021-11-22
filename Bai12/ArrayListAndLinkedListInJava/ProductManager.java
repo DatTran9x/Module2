@@ -66,6 +66,7 @@ public class ProductManager {
         int tempID = products.get(index).getId();
         products.set(index, createNewProduct());
         products.get(index).setId(tempID);
+
         Product.setIdnumber(Product.getIdnumber() - 1);
     }
 
