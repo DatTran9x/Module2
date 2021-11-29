@@ -1,0 +1,6 @@
+MaSanPham=1, ten='Giay', hangSanXuat='Nike', gia=12, moTa='Dep va ben'
+MaSanPham=2, ten='Ao', hangSanXuat='Adidas', gia=6, moTa='Ao fake'
+MaSanPham=3, ten='Quan', hangSanXuat='Gucci', gia=8, moTa='Quan thung dit'
+MaSanPham=4, ten='Laptop', hangSanXuat='Acer', gia=25, moTa='Ngon'
+MaSanPham=5, ten='Dien thoai', hangSanXuat='Galaxy', gia=18, moTa='Dien thoai cu'
+MaSanPham=6, ten='Xe may', hangSanXuat='Honda', gia=30, moTa='Xe deu'

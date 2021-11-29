@@ -4,7 +4,6 @@ import java.util.Scanner;
 
 public class TriaangleExample {
     public static class TriangleEdgesCheck {
-        // Ham kiem tra tam giac hop le
         public void checkTriangleEdges(double a, double b, double c) throws IllegalRightTriangleException {
             if (a + b <= c || a + c <= b || b + c <= a || a < 0 || b < 0 || c < 0) {
                 throw new IllegalRightTriangleException("Loi: Tam giac khong hop le!");
@@ -16,7 +15,6 @@ public class TriaangleExample {
 
     static class IllegalRightTriangleException extends Exception {
         String errorMessage;
-
         public IllegalRightTriangleException(String inErrorMessage) {
             errorMessage = inErrorMessage;
         }
