@@ -42,7 +42,7 @@ public class SinhVienController {
     }
 
     public void saveToFile() {
-        String path = "C:\\Module2.1\\src\\Test\\MiniTest2\\Data\\Data.txt";
+        String path = "C:\\Module2.1\\src\\Test\\MiniTest2\\Data\\DataSV.txt";
         sinhVienService.saveToFile(path);
     }
 }
