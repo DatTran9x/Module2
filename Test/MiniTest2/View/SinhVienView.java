@@ -55,7 +55,15 @@ public class SinhVienView {
 
     private String getName() {
         System.out.println("Nhap ten Sinh Vien");
-        return scanner.nextLine();
+        String name = scanner.nextLine();
+        for (SinhVien sv : sinhVienController.getList()) {
+            if(sv.getName().equals(name)){
+                return name;
+            }
+        }
+        System.out.println("Khong tim thay sinh vien");
+        Menu();
+        return null;
     }
 
     private SinhVien createSinhVien() {

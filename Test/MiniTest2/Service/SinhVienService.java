@@ -60,17 +60,6 @@ public class SinhVienService implements iSinhVienService {
         return -1;
     }
 
-
-    public String checkName(String name) {
-        for (SinhVien sv : sinhviens) {
-            if(sv.getName()==name){
-                return name;
-            }
-        }
-        System.out.println("Khong tim thay sinh vien");
-        return null;
-    }
-
     public List<SinhVien> getListSV() {
         return sinhviens;
     }

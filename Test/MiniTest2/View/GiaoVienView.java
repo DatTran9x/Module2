@@ -2,7 +2,9 @@ package Test.MiniTest2.View;
 
 import Test.MiniTest2.Controller.GiaoVienController;
 import Test.MiniTest2.Model.GiaoVien;
+import Test.MiniTest2.Service.GiaoVienService;
 
+import java.util.Objects;
 import java.util.Scanner;
 
 public class GiaoVienView {
@@ -54,7 +56,15 @@ public class GiaoVienView {
 
     private String getName() {
         System.out.println("Nhap ten Giao Vien");
-        return scanner.nextLine();
+        String name = scanner.nextLine();
+        for (GiaoVien sv : new GiaoVienController().getList()) {
+            if (sv.getName().equals(name)) {
+                return name;
+            }
+        }
+        System.out.println("Khong tim thay giao vien");
+        Menu();
+        return null;
     }
 
     private GiaoVien createsGiaoVien() {
@@ -84,7 +94,7 @@ public class GiaoVienView {
     private int createLuong() {
         try {
             String luong = scanner.nextLine();
-            if (Integer.parseInt(luong) < 0 || Integer.parseInt(luong) > 100) {
+            if (Integer.parseInt(luong) < 0) {
                 System.out.println("Vui long nhap lai luong");
                 createLuong();
             }
@@ -94,4 +104,5 @@ public class GiaoVienView {
             return createTuoi();
         }
     }
+
 }

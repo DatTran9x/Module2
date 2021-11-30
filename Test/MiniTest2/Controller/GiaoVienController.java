@@ -25,7 +25,6 @@ public class GiaoVienController {
 
     public void editSinhVien(String name, GiaoVien giaoVien) {
         readFromFile();
-        name = giaoVienService.checkName(name);
         if (name == null) {
             return;
         }
@@ -36,7 +35,6 @@ public class GiaoVienController {
 
     public void deleteSinhVien(String name) {
         readFromFile();
-        name = giaoVienService.checkName(name);
         if (name == null) {
             return;
         }

@@ -60,17 +60,6 @@ public class GiaoVienService implements iGiaoVienService {
         return -1;
     }
 
-
-    public String checkName(String name) {
-        for (GiaoVien sv : giaoViens) {
-            if (sv.getName() == name) {
-                return name;
-            }
-        }
-        System.out.println("Khong tim thay sinh vien");
-        return null;
-    }
-
     public List<GiaoVien> getListGV() {
         return giaoViens;
     }

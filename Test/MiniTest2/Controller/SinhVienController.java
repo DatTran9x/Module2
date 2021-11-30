@@ -26,7 +26,6 @@ public class SinhVienController {
 
     public void editSinhVien(String name, SinhVien sinhVien) {
         readFromFile();
-        name = sinhVienService.checkName(name);
         if (name == null) {
             return;
         }
@@ -37,7 +36,6 @@ public class SinhVienController {
 
     public void deleteSinhVien(String name) {
         readFromFile();
-        name = sinhVienService.checkName(name);
         if (name == null) {
             return;
         }
