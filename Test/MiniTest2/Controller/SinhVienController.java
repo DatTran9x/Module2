@@ -9,9 +9,10 @@ import java.util.List;
 public class SinhVienController {
     SinhVienService sinhVienService = new SinhVienService();
 
-    public void addSSinhVien(SinhVien sinhVien) {
+    public void addSinhVien(SinhVien sinhVien) {
         readFromFile();
         sinhVienService.addSinhVien(sinhVien);
+        saveToFile();
     }
 
     public List<SinhVien> getList() {
@@ -24,21 +25,25 @@ public class SinhVienController {
     }
 
     public void editSinhVien(String name, SinhVien sinhVien) {
+        readFromFile();
         name = sinhVienService.checkName(name);
         if (name == null) {
             return;
         }
         int index = sinhVienService.findByIndex(name);
         sinhVienService.editSinhVien(index, sinhVien);
+        saveToFile();
     }
 
     public void deleteSinhVien(String name) {
+        readFromFile();
         name = sinhVienService.checkName(name);
         if (name == null) {
             return;
         }
         int index = sinhVienService.findByIndex(name);
         sinhVienService.deleteSinhVien(index);
+        saveToFile();
     }
 
     public void saveToFile() {

@@ -19,13 +19,14 @@ public class SinhVienView {
             System.out.println("5.Luu danh sach vao File");
             System.out.println("0.Quay ve Menu chinh");
             String choice = scanner.nextLine();
+            sinhVienController.readFromFile();
             switch (choice) {
                 case "1":
                     sinhVienController.readFromFile();
                     showSinhVien();
                     break;
                 case "2":
-                    sinhVienController.addSSinhVien(createSinhVien());
+                    sinhVienController.addSinhVien(createSinhVien());
                     break;
                 case "3":
                     sinhVienController.editSinhVien(getName(), createSinhVien());

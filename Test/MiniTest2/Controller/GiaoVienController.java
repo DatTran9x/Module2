@@ -8,9 +8,10 @@ import java.util.List;
 public class GiaoVienController {
     GiaoVienService giaoVienService = new GiaoVienService();
 
-    public void addSSinhVien(GiaoVien giaoVien) {
+    public void addGiaoVien(GiaoVien giaoVien) {
         readFromFile();
         giaoVienService.addGiaoVien(giaoVien);
+        saveToFile();
     }
 
     public List<GiaoVien> getList() {
@@ -23,21 +24,25 @@ public class GiaoVienController {
     }
 
     public void editSinhVien(String name, GiaoVien giaoVien) {
+        readFromFile();
         name = giaoVienService.checkName(name);
         if (name == null) {
             return;
         }
         int index = giaoVienService.findByIndex(name);
         giaoVienService.editGiaoVien(index, giaoVien);
+        saveToFile();
     }
 
     public void deleteSinhVien(String name) {
+        readFromFile();
         name = giaoVienService.checkName(name);
         if (name == null) {
             return;
         }
         int index = giaoVienService.findByIndex(name);
         giaoVienService.deleteGiaoVien(index);
+        saveToFile();
     }
 
     public void saveToFile() {

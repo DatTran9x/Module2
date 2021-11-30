@@ -25,7 +25,7 @@ public class GiaoVienView {
                     showSinhVien();
                     break;
                 case "2":
-                    giaoVienController.addSSinhVien(createsGiaoVien());
+                    giaoVienController.addGiaoVien(createsGiaoVien());
                     break;
                 case "3":
                     giaoVienController.editSinhVien(getName(), createsGiaoVien());
