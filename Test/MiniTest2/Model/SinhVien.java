@@ -2,7 +2,7 @@ package Test.MiniTest2.Model;
 
 import java.io.Serializable;
 
-public class SinhVien extends Nguoi{
+public class SinhVien extends Nguoi {
     private double averageScore;
 
     public SinhVien() {
@@ -27,7 +27,7 @@ public class SinhVien extends Nguoi{
 
     @Override
     public String toString() {
-        return "SinhVien{"+
+        return "SinhVien{" +
                 "name='" + super.getName() + '\'' +
                 ", age=" + super.getAge() +
                 ", averageScore=" + averageScore +

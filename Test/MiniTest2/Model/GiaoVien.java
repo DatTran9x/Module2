@@ -1,6 +1,6 @@
 package Test.MiniTest2.Model;
 
-public class GiaoVien extends Nguoi{
+public class GiaoVien extends Nguoi {
     private int salary;
 
     public GiaoVien() {

@@ -8,8 +8,8 @@ import java.util.Scanner;
 public class GiaoVienView {
     Scanner scanner = new Scanner(System.in);
     GiaoVienController giaoVienController = new GiaoVienController();
+
     public void Menu() {
-        View view = new View();
         while (true) {
             System.out.println("---MENU---");
             System.out.println("1.Doc tu File va luu vao danh sach");
@@ -38,8 +38,7 @@ public class GiaoVienView {
                     showSinhVien();
                     break;
                 case "0":
-                    view.Menu();
-                    break;
+                    new View().Menu();
                 default:
                     System.out.println("Vui long nhap lai");
             }
@@ -47,7 +46,7 @@ public class GiaoVienView {
     }
 
     private void showSinhVien() {
-        for (GiaoVien gv: giaoVienController.getList()) {
+        for (GiaoVien gv : giaoVienController.getList()) {
             System.out.println(gv);
         }
     }
@@ -62,19 +61,37 @@ public class GiaoVienView {
         System.out.println("Nhap ten Giao Vien");
         String name = scanner.nextLine();
         System.out.println("Nhap tuoi Giao Vien");
-        int age = createInt();
+        int age = createTuoi();
         System.out.println("Nhap luong");
-        int salary = createInt();
-        return new GiaoVien(name,age,salary);
+        int salary = createLuong();
+        return new GiaoVien(name, age, salary);
     }
 
-    private int createInt() {
+    private int createTuoi() {
         try {
             String tuoi = scanner.nextLine();
+            if (Integer.parseInt(tuoi) < 0 || Integer.parseInt(tuoi) > 100) {
+                System.out.println("Vui long nhap lai tuoi");
+                createTuoi();
+            }
             return Integer.parseInt(tuoi);
-        } catch (Exception e){
+        } catch (Exception e) {
             System.out.println("Vui long nhap so");
-            return createInt();
+            return createTuoi();
+        }
+    }
+
+    private int createLuong() {
+        try {
+            String luong = scanner.nextLine();
+            if (Integer.parseInt(luong) < 0 || Integer.parseInt(luong) > 100) {
+                System.out.println("Vui long nhap lai luong");
+                createLuong();
+            }
+            return Integer.parseInt(luong);
+        } catch (Exception e) {
+            System.out.println("Vui long nhap so");
+            return createTuoi();
         }
     }
 }

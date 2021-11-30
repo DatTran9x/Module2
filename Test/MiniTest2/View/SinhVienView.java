@@ -8,8 +8,8 @@ import java.util.Scanner;
 public class SinhVienView {
     Scanner scanner = new Scanner(System.in);
     SinhVienController sinhVienController = new SinhVienController();
+
     public void Menu() {
-        View view = new View();
         while (true) {
             System.out.println("---MENU---");
             System.out.println("1.Doc tu File va luu vao danh sach");
@@ -28,7 +28,7 @@ public class SinhVienView {
                     sinhVienController.addSSinhVien(createSinhVien());
                     break;
                 case "3":
-                    sinhVienController.editSinhVien(getName(),createSinhVien());
+                    sinhVienController.editSinhVien(getName(), createSinhVien());
                     break;
                 case "4":
                     sinhVienController.deleteSinhVien(getName());
@@ -38,8 +38,7 @@ public class SinhVienView {
                     showSinhVien();
                     break;
                 case "0":
-                    view.Menu();
-                    break;
+                    new View().Menu();
                 default:
                     System.out.println("Vui long nhap lai");
             }
@@ -47,15 +46,15 @@ public class SinhVienView {
     }
 
     private void showSinhVien() {
-        for (SinhVien sv:sinhVienController.getList()) {
+        for (SinhVien sv : sinhVienController.getList()) {
             System.out.println(sv);
         }
     }
 
 
     private String getName() {
-            System.out.println("Nhap ten Sinh Vien");
-            return scanner.nextLine();
+        System.out.println("Nhap ten Sinh Vien");
+        return scanner.nextLine();
     }
 
     private SinhVien createSinhVien() {
@@ -65,23 +64,32 @@ public class SinhVienView {
         int age = epTuoi();
         System.out.println("Nhap diem trung binh");
         double averageScore = epDiem();
-        return new SinhVien(name,age,averageScore);
+        return new SinhVien(name, age, averageScore);
     }
 
     private int epTuoi() {
         try {
             String tuoi = scanner.nextLine();
+            if (Integer.parseInt(tuoi) < 0 || Integer.parseInt(tuoi) > 100) {
+                System.out.println("Vui long nhap lai tuoi");
+                epTuoi();
+            }
             return Integer.parseInt(tuoi);
-        } catch (Exception e){
+        } catch (Exception e) {
             System.out.println("Vui long nhap so");
             return epTuoi();
         }
     }
+
     private double epDiem() {
         try {
-            String tuoi = scanner.nextLine();
-            return Integer.parseInt(tuoi);
-        } catch (Exception e){
+            String diem = scanner.nextLine();
+            if (Integer.parseInt(diem) < 0 || Integer.parseInt(diem) > 100) {
+                System.out.println("Vui long nhap lai diem");
+                epDiem();
+            }
+            return Integer.parseInt(diem);
+        } catch (Exception e) {
             System.out.println("Vui long nhap so");
             return epDiem();
         }

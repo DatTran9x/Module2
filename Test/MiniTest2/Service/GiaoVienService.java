@@ -63,7 +63,7 @@ public class GiaoVienService implements iGiaoVienService {
 
     public String checkName(String name) {
         for (GiaoVien sv : giaoViens) {
-            if(sv.getName()==name){
+            if (sv.getName() == name) {
                 return name;
             }
         }
