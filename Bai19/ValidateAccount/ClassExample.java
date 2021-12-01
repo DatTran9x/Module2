@@ -3,7 +3,7 @@ package Bai19.ValidateAccount;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
-public class AccountExample {
+public class ClassExample {
     /*Không chứa các ký tự đặc biệt
 	  Phải dài hơn 6 ký tự
 	  Không chứa các ký tự viết hoa
@@ -11,7 +11,7 @@ public class AccountExample {
 	*/
     private static final String ACCOUNT_REGEX = "^[_a-z0-9]{6,}$";
 
-    public AccountExample() {
+    public ClassExample() {
     }
 
     public boolean validate(String regex) {
