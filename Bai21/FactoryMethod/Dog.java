@@ -1,4 +1,4 @@
-package Bai20.FactoryMethod;
+package Bai21.FactoryMethod;
 
 public class Dog extends Animal {
     @Override
