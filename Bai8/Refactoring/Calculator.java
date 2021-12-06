@@ -1,4 +1,4 @@
-package Bai.Refactoring;
+package Bai8.Refactoring;
 
 public class Calculator {
     public static final char ADDITION ='+';
