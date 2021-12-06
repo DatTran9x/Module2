@@ -1,4 +1,4 @@
-package Bai.Refactoring;
+package Bai8.Refactoring;
 
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
