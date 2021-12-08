@@ -22,7 +22,7 @@ public class Validate {
         }
     }
 
-    public int validateInterger() {
+    public int validateInteger() {
         try {
             String word = scanner.nextLine();
             if(word.equals("")){
@@ -31,12 +31,12 @@ public class Validate {
             int number = Integer.parseInt(word);
             if (number < 0) {
                 getAndAlert.alertNumber();
-                return validateInterger();
+                return validateInteger();
             }
             return number;
         } catch (Exception e) {
             getAndAlert.alertNumber();
-            return validateInterger();
+            return validateInteger();
         }
     }
 }

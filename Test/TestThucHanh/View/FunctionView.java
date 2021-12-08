@@ -33,11 +33,11 @@ public class FunctionView {
 
     private Student createStudent() {
         System.out.println("Nhap ma sinh vien");
-        int id = validate.validateInterger();
+        int id = validate.validateInteger();
         System.out.println("Nhap ten sinh vien");
         String name = scanner.nextLine();
         System.out.println("Nhap tuoi sinh vien");
-        int age = validate.validateInterger();
+        int age = validate.validateInteger();
         System.out.println("Nhap gioi tinh sinh vien");
         String gender = scanner.nextLine();
         System.out.println("Nhap dia chi sinh vien");
@@ -49,7 +49,7 @@ public class FunctionView {
 
     public void editMenu() {
         System.out.println("Nhap ma sinh vien can sua");
-        int id = validate.validateInterger();
+        int id = validate.validateInteger();
         int index = controller.checkId(id);
         if (index == -1) {
             getAndAlert.noStudent();
@@ -60,7 +60,7 @@ public class FunctionView {
 
     public void deleteMenu() {
         System.out.println("Nhap ma sinh vien can sua");
-        int id = validate.validateInterger();
+        int id = validate.validateInteger();
         if (id == -1) {
             return;
         }
